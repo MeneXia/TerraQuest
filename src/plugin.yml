@@ -1,0 +1,15 @@
+name: TerraQuest
+main: me.menexia.terraquest.TerraQuest
+version: 1.0.0
+description: Provides easy quest listing.
+commands:
+    quest:
+        description: Base command for quests.
+        usage: <command>
+    accept:
+        description: Accepts a quest.
+        usage: <command>
+permissions:
+    TerraQuest.use:
+        description: Allows the user to write quests.
+        default: true
