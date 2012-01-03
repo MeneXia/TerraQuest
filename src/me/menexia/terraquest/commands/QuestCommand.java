@@ -76,22 +76,23 @@ public class QuestCommand implements CommandExecutor {
 						player.sendMessage(drkgreen + "------ " + gold + questName + yellow + " - " + playerName + drkgreen + " ------");
 						player.sendMessage(objective);
 						player.sendMessage(aqua + "Reward: " + reward);
-						return true;
 					} else {
 						player.sendMessage("You do not have a current quest.");
 					}
+					return true;
+				}
 				
 				if (args[0].equalsIgnoreCase("abandon")) {
 					if (a.database.getArguments("onquest").getValue(player.getName()) != null
 							&& a.database.getArguments("onquest").getInteger(player.getName()) > 0) {
+						a.database.setArgument(a.database.getArguments("onquest").getValue(player.getName()), "status", ChatColor.GREEN + " - Free");
 						a.database.getArguments("onquest").setValue("onquest", "0");
+						
 						player.sendMessage("You have abandoned your current quest.");
 					} else {
 						player.sendMessage("You must have a quest before abandoning it!");
 					}
 					return true;
-				}
-					
 				}
 				
 				try {
@@ -104,7 +105,7 @@ public class QuestCommand implements CommandExecutor {
 					
 								player.sendMessage(drkgreen + "------ " + gold + questName + yellow + " - " + playerName + drkgreen + " ------");
 								player.sendMessage(objective);
-								player.sendMessage(red + "Reward: " + reward);
+								player.sendMessage(aqua + "Reward: " + reward);
 								if (a.database.getArguments(String.valueOf(args[0])).getValue("status").equals(red + " - Accepted")) {
 									player.sendMessage(red + "Quest already accepted.");
 								} else {
