@@ -1,1 +1,18 @@
-Soon to be documentation...
+TerraQuest v1.0.1
+
+This plugin creates commands for users to write their own quests in-game. These quests can be accepted by anybody
+and abandoned by the quester if the quest is too hard.
+
+Each person will only be able to write one quest.
+
+Permissions:
+TerraQuest.use - Allows users to write quests.
+
+Commands:
+/quest or /quest help - Shows TerraQuest help
+/quest create - Starts the quest creation interface.
+/quest list - Shows 10 random available quests.
+/quest <number> (/quest 45) - Shows extra information of the specific quest.
+/accept - After looking into the quest's objectives, you have an option to accept it.
+/quest check - Checks your current quest.
+/quest abandon - Abandons your current quest.
